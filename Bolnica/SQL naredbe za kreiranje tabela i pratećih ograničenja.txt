@@ -1,0 +1,475 @@
+--  DDL for Table ODELJENJE
+--------------------------------------------------------
+
+  CREATE TABLE "ODELJENJE" 
+   (	"SIFRA" NUMBER(10,0), 
+	"TIP" VARCHAR2(30 BYTE), 
+	"DATUM_IZGRADNJE" DATE,
+	"MAT_BR_LSPEC" NUMBER(12,0)
+   ) ;
+--------------------------------------------------------
+--  DDL for Table OSOBLJE
+--------------------------------------------------------
+
+  CREATE TABLE "OSOBLJE" 
+   (	"MAT_BR" NUMBER(12,0), 
+	"IME" VARCHAR2(30 BYTE), 
+	"PREZIME" VARCHAR2(30 BYTE)
+   ) ;
+--------------------------------------------------------
+--  DDL for Table MEDICINSKO
+--------------------------------------------------------
+
+  CREATE TABLE "MEDICINSKO" 
+   (	
+	"MAT_BR" NUMBER(12,0), 
+	"RADNI_STAZ" NUMBER(10,0),
+	"TIP_LEKARA" VARCHAR2(30 BYTE),
+	"BROJ_ORDINACIJE" NUMBER(9,0),
+	"SPECIJALNOST" VARCHAR2(30 BYTE)
+   ) ;
+--------------------------------------------------------
+--  DDL for Table NEMEDICINSKO
+--------------------------------------------------------
+
+  CREATE TABLE "NEMEDICINSKO" 
+   (	
+	"MAT_BR" NUMBER(12,0), 
+	"TIP_ODRZAVANJA" VARCHAR2(30 BYTE),
+	"STRUKA" VARCHAR2(30 BYTE)
+   ) ;
+--------------------------------------------------------
+--  DDL for Table PACIJENT //promena
+--------------------------------------------------------
+
+  CREATE TABLE "PACIJENT" 
+   (	
+	"MAT_BR" NUMBER(12,0), 
+	"IME" VARCHAR2(30 BYTE),
+	"PREZIME" VARCHAR2(30 BYTE),
+	"TIP_PACIJENTA" VARCHAR2(30 BYTE),
+	"ULICA" VARCHAR2(30 BYTE),
+	"BROJ" NUMBER(10,0),
+	"DATUM_PRIJEMA" DATE,
+	"DATUM_OTPUSTA" DATE,
+	"MAT_BR_LOP" NUMBER(12,0),
+	"MAT_BR_LSPEC" NUMBER(12,0)
+   ) ;
+--------------------------------------------------------
+--  DDL for Table ODRZAVA_HIGIJENU_NA
+--------------------------------------------------------
+
+  CREATE TABLE "ODRZAVA_HIGIJENU_NA" 
+   (	
+	"MAT_BR" NUMBER(12,0),
+	"MAT_BR_H" NUMBER(12,0), 
+	"SIFRA" NUMBER(12,0),
+	"VREME_ODRZAVANJA" DATE --VREME_ODRZAVANJA je moralo da bude tipa DATE, jer Sql Developer ne podrzava tip TIME
+   ) ;
+--------------------------------------------------------
+--  DDL for Table LEZI_NA
+--------------------------------------------------------
+
+  CREATE TABLE "LEZI_NA" 
+   (	
+	"MAT_BR" NUMBER(12,0),
+	"MAT_BR_P" NUMBER(12,0), 
+	"SIFRA" NUMBER(12,0),
+	"VREME_POCETKA" DATE ----VREME_POCETKA je moralo da bude tipa DATE, jer Sql Developer ne podrzava tip TIME
+   ) ;
+--------------------------------------------------------
+--  DDL for Table RADI_NA
+--------------------------------------------------------
+
+  CREATE TABLE "RADI_NA" 
+   (	
+	"MAT_BR" NUMBER(12,0),
+	"MAT_BR_S" NUMBER(12,0), 
+	"PROIZVODJAC" VARCHAR2(30 BYTE),
+	"ID" NUMBER(10,0)
+   ) ;
+--------------------------------------------------------
+--  DDL for Table OBAVLJA
+--------------------------------------------------------
+
+  CREATE TABLE "OBAVLJA" 
+   (	
+	"MAT_BR" NUMBER(12,0),
+	"MAT_BR_S" NUMBER(12,0), 
+	"MAT_BR_P" NUMBER(12,0), 
+	"VRSTA" VARCHAR2(30 BYTE),
+	"VREME_INTERVENCIJE" DATE ----VREME_INTERVENCIJE je moralo da bude tipa DATE, jer Sql Developer ne podrzava tip TIME
+   ) ;
+--------------------------------------------------------
+--  DDL for Table INTERVENCIJA
+--------------------------------------------------------
+
+  CREATE TABLE "INTERVENCIJA" 
+   (	
+	"VRSTA" VARCHAR2(30 BYTE),
+	"DATUM" DATE
+   ) ;
+--------------------------------------------------------
+--  DDL for Table STOMATOLOSKA_STOLICA
+--------------------------------------------------------
+
+  CREATE TABLE "STOMATOLOSKA_STOLICA" 
+   (	
+	"PROIZVODJAC" VARCHAR2(30 BYTE),
+	"DATUM_PROIZVODNJE" DATE,
+	"MAT_BR_T" NUMBER(12,0)
+   ) ;
+--------------------------------------------------------
+--  DDL for Table SMENA
+--------------------------------------------------------
+
+  CREATE TABLE "SMENA" 
+   (	
+	"ID" NUMBER(12,0),
+	"TIP_SMENE" VARCHAR2(30 BYTE)
+   ) ;
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Index ODELJENJE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ODELJENJE_PK" ON "ODELJENJE" ("SIFRA");
+--------------------------------------------------------
+--  DDL for Index INTERVENCCIJA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "INTERVENCIJA_PK" ON "INTERVENCIJA" ("VRSTA");
+--------------------------------------------------------
+--  DDL for Index SMENA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SMENA_PK" ON "SMENA" ("ID");
+--------------------------------------------------------
+--  DDL for Index OSOBLJE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "OSOBLJE_PK" ON "OSOBLJE" ("MAT_BR");
+--------------------------------------------------------
+--  DDL for Index MEDICINSKO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "MEDICINSKO_PK" ON "MEDICINSKO" ("MAT_BR");
+--------------------------------------------------------
+--  DDL for Index NEMEDICINSKO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "NEMEDICINSKO_PK" ON "NEMEDICINSKO" ("MAT_BR");
+--------------------------------------------------------
+--  DDL for Index PACIJENT_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PACIJENT_PK" ON "PACIJENT" ("MAT_BR");
+--------------------------------------------------------
+--  DDL for Index ODRZAVA_HIGIJENU_NA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ODRZAVA_HIGIJENU_NA_PK" ON "ODRZAVA_HIGIJENU_NA" ("MAT_BR");
+--------------------------------------------------------
+--  DDL for Index LEZI_NA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "LEZI_NA_PK" ON "LEZI_NA" ("MAT_BR");
+--------------------------------------------------------
+--  DDL for Index RADI_NA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "RADI_NA_PK" ON "RADI_NA" ("MAT_BR");
+--------------------------------------------------------
+--  DDL for Index OBAVLJA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "OBAVLJA_PK" ON "OBAVLJA" ("MAT_BR");
+--------------------------------------------------------
+--  DDL for Index STOMATOLOSKA_STOLICA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "STOMATOLOSKA_STOLICA_PK" ON "STOMATOLOSKA_STOLICA" ("PROIZVODJAC");
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Sequence OSOBLJE_MAT_BR_SEQ    
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "OSOBLJE_MAT_BR_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 
+		INCREMENT BY 1 START WITH 1 CACHE 20 ORDER  NOCYCLE ;
+
+--------------------------------------------------------
+--  DDL for Sequence ODELJENJE_SIFRA_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "ODELJENJE_SIFRA_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 
+		INCREMENT BY 1 START WITH 1 CACHE 20 ORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence PACIJENT_MAT_BR_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "PACIJENT_MAT_BR_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 
+		INCREMENT BY 1 START WITH 1 CACHE 20 ORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence SMENA_ID_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SMENA_ID_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 
+		INCREMENT BY 1 START WITH 1 CACHE 20 ORDER  NOCYCLE ;
+
+--------------------------------------------------------
+--  DDL for Sequence LEZI_NA_MAT_BR_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "LEZI_NA_MAT_BR_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 
+		INCREMENT BY 1 START WITH 1 CACHE 20 ORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence ODRZAVA_HIGIJENU_NA_MAT_BR_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "ODRZAVA_HIGIJENU_NA_MAT_BR_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 
+		INCREMENT BY 1 START WITH 1 CACHE 20 ORDER  NOCYCLE ;
+
+--------------------------------------------------------
+--  DDL for Sequence OBAVLJA_MAT_BR_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "OBAVLJA_MAT_BR_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 
+		INCREMENT BY 1 START WITH 1 CACHE 20 ORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence RADI_NA_MAT_BR_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "RADI_NA_MAT_BR_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 
+		INCREMENT BY 1 START WITH 1 CACHE 20 ORDER  NOCYCLE ;
+--------------------------------------------------------
+--------------------------------------------------------
+--  Constraints for Table OSOBLJE
+--------------------------------------------------------
+  ALTER TABLE "OSOBLJE" ADD CONSTRAINT "OSOBLJE_PK" PRIMARY KEY ("MAT_BR") ENABLE;
+  ALTER TABLE "OSOBLJE" MODIFY ("MAT_BR" NOT NULL ENABLE);
+  ALTER TABLE "OSOBLJE" MODIFY ("IME" NOT NULL ENABLE);
+  ALTER TABLE "OSOBLJE" MODIFY ("PREZIME" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table MEDICINSKO
+--------------------------------------------------------
+  ALTER TABLE "MEDICINSKO" ADD CONSTRAINT "MEDICINSKO_PK" PRIMARY KEY ("MAT_BR") ENABLE;
+  ALTER TABLE "MEDICINSKO" ADD CONSTRAINT "MEDICINSKO_TIP_LEKARA_CHK" CHECK (TIP_LEKARA IN ('STOMATOLOG', 'LEKAR_OPSTE_PRAKSE', 'LEKAR_SPECIJALISTA')) ENABLE;
+  ALTER TABLE "MEDICINSKO" MODIFY ("MAT_BR" NOT NULL ENABLE);
+  ALTER TABLE "MEDICINSKO" MODIFY ("RADNI_STAZ" NOT NULL ENABLE);
+  ALTER TABLE "MEDICINSKO" MODIFY ("TIP_LEKARA" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table NEMEDICINSKO
+--------------------------------------------------------
+  ALTER TABLE "NEMEDICINSKO" ADD CONSTRAINT "NEMEDICINSKO_PK" PRIMARY KEY ("MAT_BR") ENABLE;
+  ALTER TABLE "NEMEDICINSKO" ADD CONSTRAINT "NEMEDICINSKO_TIPODRZAVANJA_CHK" CHECK (TIP_ODRZAVANJA IN ('HIGIJENICAR', 'TEHNICKO_ODRZAVANJE')) ENABLE;
+  ALTER TABLE "NEMEDICINSKO" MODIFY ("MAT_BR" NOT NULL ENABLE);
+  ALTER TABLE "NEMEDICINSKO" MODIFY ("TIP_ODRZAVANJA" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table PACIJENT//PROMENA
+--------------------------------------------------------
+  ALTER TABLE "PACIJENT" ADD CONSTRAINT "PACIJENT_PK" PRIMARY KEY ("MAT_BR") ENABLE;
+  ALTER TABLE "PACIJENT" MODIFY ("MAT_BR" NOT NULL ENABLE);
+  ALTER TABLE "PACIJENT" MODIFY ("IME" NOT NULL ENABLE);
+  ALTER TABLE "PACIJENT" MODIFY ("PREZIME" NOT NULL ENABLE);
+  ALTER TABLE "PACIJENT" ADD CONSTRAINT "PACIJENT_TIP_PACIJENTA_CHK" CHECK (TIP_PACIJENTA IN ('AMBULANTNI', 'STACIONARNI')) ENABLE;
+  ALTER TABLE "PACIJENT" MODIFY ("MAT_BR_LOP" NOT NULL ENABLE);
+  ALTER TABLE "PACIJENT" MODIFY ("MAT_BR_LSPEC" NOT NULL ENABLE);
+  ALTER TABLE "PACIJENT" MODIFY ("TIP_PACIJENTA" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ODELJENJE
+--------------------------------------------------------
+  ALTER TABLE "ODELJENJE" ADD CONSTRAINT "ODELJENJE_PK" PRIMARY KEY ("SIFRA") ENABLE;
+  ALTER TABLE "ODELJENJE" MODIFY ("SIFRA" NOT NULL ENABLE);
+  ALTER TABLE "ODELJENJE" MODIFY ("TIP" NOT NULL ENABLE);
+  ALTER TABLE "ODELJENJE" MODIFY ("DATUM_IZGRADNJE" NOT NULL ENABLE);
+  ALTER TABLE "ODELJENJE" MODIFY ("MAT_BR_LSPEC" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table INTERVENCIJA
+--------------------------------------------------------
+  ALTER TABLE "INTERVENCIJA" ADD CONSTRAINT "INTERVENCIJA_PK" PRIMARY KEY ("VRSTA") ENABLE;
+  ALTER TABLE "INTERVENCIJA" MODIFY ("VRSTA" NOT NULL ENABLE);
+  ALTER TABLE "INTERVENCIJA" MODIFY ("DATUM" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table STOMATOLOSKA_STOLICA
+--------------------------------------------------------
+  ALTER TABLE "STOMATOLOSKA_STOLICA" ADD CONSTRAINT "STOMATOLOSKA_STOLICA_PK" PRIMARY KEY ("PROIZVODJAC") ENABLE;
+  ALTER TABLE "STOMATOLOSKA_STOLICA" MODIFY ("PROIZVODJAC" NOT NULL ENABLE);
+  ALTER TABLE "STOMATOLOSKA_STOLICA" MODIFY ("DATUM_PROIZVODNJE" NOT NULL ENABLE);
+  ALTER TABLE "STOMATOLOSKA_STOLICA" MODIFY ("MAT_BR_T" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table SMENA
+--------------------------------------------------------
+  ALTER TABLE "SMENA" ADD CONSTRAINT "SMENA_PK" PRIMARY KEY ("ID") ENABLE;
+  ALTER TABLE "SMENA" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "SMENA" MODIFY ("TIP_SMENE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ODRZAVA_HIGIJENU_NA
+--------------------------------------------------------
+  ALTER TABLE "ODRZAVA_HIGIJENU_NA" ADD CONSTRAINT "ODRZAVA_HIGIJENU_NA_PK" PRIMARY KEY ("MAT_BR") ENABLE;
+  ALTER TABLE "ODRZAVA_HIGIJENU_NA" MODIFY ("MAT_BR" NOT NULL ENABLE);
+  ALTER TABLE "ODRZAVA_HIGIJENU_NA" MODIFY ("MAT_BR_H" NOT NULL ENABLE);
+  ALTER TABLE "ODRZAVA_HIGIJENU_NA" MODIFY ("SIFRA" NOT NULL ENABLE);
+  ALTER TABLE "ODRZAVA_HIGIJENU_NA" MODIFY ("VREME_ODRZAVANJA" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table LEZI_NA
+--------------------------------------------------------
+  ALTER TABLE "LEZI_NA" ADD CONSTRAINT "LEZI_NA_PK" PRIMARY KEY ("MAT_BR") ENABLE;
+  ALTER TABLE "LEZI_NA" MODIFY ("MAT_BR" NOT NULL ENABLE);
+  ALTER TABLE "LEZI_NA" MODIFY ("MAT_BR_P" NOT NULL ENABLE);
+  ALTER TABLE "LEZI_NA" MODIFY ("SIFRA" NOT NULL ENABLE);
+  ALTER TABLE "LEZI_NA" MODIFY ("VREME_POCETKA" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table RADI_NA
+--------------------------------------------------------
+  ALTER TABLE "RADI_NA" ADD CONSTRAINT "RADI_NA_PK" PRIMARY KEY ("MAT_BR") ENABLE;
+  ALTER TABLE "RADI_NA" MODIFY ("MAT_BR" NOT NULL ENABLE);
+  ALTER TABLE "RADI_NA" MODIFY ("MAT_BR_S" NOT NULL ENABLE);
+  ALTER TABLE "RADI_NA" MODIFY ("PROIZVODJAC" NOT NULL ENABLE);
+  ALTER TABLE "RADI_NA" MODIFY ("ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table OBAVLJA
+--------------------------------------------------------
+  ALTER TABLE "OBAVLJA" ADD CONSTRAINT "OBAVLJA_PK" PRIMARY KEY ("MAT_BR") ENABLE;
+  ALTER TABLE "OBAVLJA" MODIFY ("MAT_BR" NOT NULL ENABLE);
+  ALTER TABLE "OBAVLJA" MODIFY ("MAT_BR_S" NOT NULL ENABLE);
+  ALTER TABLE "OBAVLJA" MODIFY ("MAT_BR_P" NOT NULL ENABLE);
+  ALTER TABLE "OBAVLJA" MODIFY ("VRSTA" NOT NULL ENABLE);
+  ALTER TABLE "OBAVLJA" MODIFY ("VREME_INTERVENCIJE" NOT NULL ENABLE);
+----------------------------------------------------------
+----------------------------------------------------------
+--  Ref Constraints for Table ODELJENJE
+--------------------------------------------------------
+  ALTER TABLE "ODELJENJE" ADD CONSTRAINT "ODELJENJE_LEKAR_SPEC_FK" FOREIGN KEY ("MAT_BR_LSPEC")
+	  REFERENCES "MEDICINSKO" ("MAT_BR") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table STOMATOLOSKA_STOLICA
+--------------------------------------------------------
+  ALTER TABLE "STOMATOLOSKA_STOLICA" ADD CONSTRAINT "STOLICA_TEHNICKO_FK" FOREIGN KEY ("MAT_BR_T")
+	  REFERENCES "NEMEDICINSKO" ("MAT_BR") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table MEDICINSKO
+--------------------------------------------------------
+  ALTER TABLE "MEDICINSKO" ADD CONSTRAINT "MEDICINSKO_OSOBLJE_FK" FOREIGN KEY ("MAT_BR")
+	  REFERENCES "OSOBLJE" ("MAT_BR") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table NEMEDICINSKO
+--------------------------------------------------------
+  ALTER TABLE "NEMEDICINSKO" ADD CONSTRAINT "NEMEDICINSKO_OSOBLJE_FK" FOREIGN KEY ("MAT_BR")
+	  REFERENCES "OSOBLJE" ("MAT_BR") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table PACIJENT
+--------------------------------------------------------
+  ALTER TABLE "PACIJENT" ADD CONSTRAINT "PACIJENT_LOP_FK" FOREIGN KEY ("MAT_BR_LOP")
+	  REFERENCES "MEDICINSKO" ("MAT_BR") ENABLE;
+
+ ALTER TABLE "PACIJENT" ADD CONSTRAINT "PACIJENT_LSPEC_FK" FOREIGN KEY ("MAT_BR_LSPEC")
+	  REFERENCES "MEDICINSKO" ("MAT_BR") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ODRZAVA_HIGIJENU_NA
+--------------------------------------------------------
+  ALTER TABLE "ODRZAVA_HIGIJENU_NA" ADD CONSTRAINT "ODRZAVA_HIGIJENU_H_FK" FOREIGN KEY ("MAT_BR_H")
+	  REFERENCES "NEMEDICINSKO" ("MAT_BR") ENABLE;
+
+ ALTER TABLE "ODRZAVA_HIGIJENU_NA" ADD CONSTRAINT "ODRZAVA_HIGIJENU_ODELJENJE_FK" FOREIGN KEY ("SIFRA")
+	  REFERENCES "ODELJENJE" ("SIFRA") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table LEZI_NA
+--------------------------------------------------------
+  ALTER TABLE "LEZI_NA" ADD CONSTRAINT "LEZI_PACIJENT_FK" FOREIGN KEY ("MAT_BR_P")
+	  REFERENCES "PACIJENT" ("MAT_BR") ENABLE;
+
+ ALTER TABLE "LEZI_NA" ADD CONSTRAINT "LEZI_ODELJENJU_FK" FOREIGN KEY ("SIFRA")
+	  REFERENCES "ODELJENJE" ("SIFRA") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table RADI_NA
+--------------------------------------------------------
+  ALTER TABLE "RADI_NA" ADD CONSTRAINT "RADI_STOMATOLOG_FK" FOREIGN KEY ("MAT_BR_S")
+	  REFERENCES "MEDICINSKO" ("MAT_BR") ENABLE;
+
+ ALTER TABLE "RADI_NA" ADD CONSTRAINT "RADI_STOM_STOLICA_FK" FOREIGN KEY ("PROIZVODJAC")
+	  REFERENCES "STOMATOLOSKA_STOLICA" ("PROIZVODJAC") ENABLE;
+
+ ALTER TABLE "RADI_NA" ADD CONSTRAINT "RADI_U_SMENI_FK" FOREIGN KEY ("ID")
+	  REFERENCES "SMENA" ("ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table OBAVLJA
+--------------------------------------------------------
+  ALTER TABLE "OBAVLJA" ADD CONSTRAINT "OBAVLJA_STOMATOLOG_FK" FOREIGN KEY ("MAT_BR_S")
+	  REFERENCES "MEDICINSKO" ("MAT_BR") ENABLE;
+
+ ALTER TABLE "OBAVLJA" ADD CONSTRAINT "OBAVLJA_PACIJENTA_FK" FOREIGN KEY ("MAT_BR_P")
+	  REFERENCES "PACIJENT" ("MAT_BR") ENABLE;
+
+ ALTER TABLE "OBAVLJA" ADD CONSTRAINT "OBAVLJA_INTERVENCIJU_FK" FOREIGN KEY ("VRSTA")
+	  REFERENCES "INTERVENCIJA" ("VRSTA") ENABLE;
+--------------------------------------------------------
+
+--------------------------------------------------------
+--  DDL for Trigger ODELJENJE_AUTO_PK
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "ODELJENJE_AUTO_PK" 
+    BEFORE INSERT
+    ON ODELJENJE
+    REFERENCING NEW AS NEW
+    FOR EACH ROW
+BEGIN
+    SELECT ODELJENJE_SIFRA_SEQ.NEXTVAL INTO :NEW.SIFRA FROM DUAL;
+END;
+/
+ALTER TRIGGER "ODELJENJE_AUTO_PK" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger PACIJENT_AUTO_PK
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "PACIJENT_AUTO_PK" 
+    BEFORE INSERT
+    ON PACIJENT
+    REFERENCING NEW AS NEW
+    FOR EACH ROW
+BEGIN
+    SELECT PACIJENT_MAT_BR_SEQ.NEXTVAL INTO :NEW.MAT_BR FROM DUAL;
+END;
+/
+ALTER TRIGGER "PACIJENT_AUTO_PK" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger OSOBLJE_AUTO_PK   
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "OSOBLJE_AUTO_PK" 
+    BEFORE INSERT
+    ON OSOBLJE
+    REFERENCING NEW AS NEW
+    FOR EACH ROW
+BEGIN
+    SELECT OSOBLJE_MAT_BR_SEQ.NEXTVAL INTO :NEW.MAT_BR FROM DUAL;
+END;
+/
+ALTER TRIGGER "OSOBLJE_AUTO_PK" ENABLE;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

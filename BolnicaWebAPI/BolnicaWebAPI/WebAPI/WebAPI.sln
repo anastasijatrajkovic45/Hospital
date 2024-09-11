@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33801.468
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI.csproj", "{D284D5B0-CBF9-4C4E-8A7D-42447F5CDD2E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BolnicaLibrary", "..\BolnicaLibrary\BolnicaLibrary.csproj", "{33B6C540-6B5B-4E98-9F5A-392FF9E16C55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{EDC22CC8-2A6C-4632-A8D4-D8981EDD9A8B}"
+	ProjectSection(SolutionItems) = preProject
+		..\Client\azuriraj.html = ..\Client\azuriraj.html
+		..\Client\dodaj.html = ..\Client\dodaj.html
+		..\Client\index.html = ..\Client\index.html
+		..\Client\obrisi.html = ..\Client\obrisi.html
+		..\Client\script.js = ..\Client\script.js
+		..\Client\style.css = ..\Client\style.css
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D284D5B0-CBF9-4C4E-8A7D-42447F5CDD2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D284D5B0-CBF9-4C4E-8A7D-42447F5CDD2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D284D5B0-CBF9-4C4E-8A7D-42447F5CDD2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D284D5B0-CBF9-4C4E-8A7D-42447F5CDD2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33B6C540-6B5B-4E98-9F5A-392FF9E16C55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33B6C540-6B5B-4E98-9F5A-392FF9E16C55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33B6C540-6B5B-4E98-9F5A-392FF9E16C55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33B6C540-6B5B-4E98-9F5A-392FF9E16C55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9D3D797-DBB7-4380-807C-6314A3DDCDC4}
+	EndGlobalSection
+EndGlobal

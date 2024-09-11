@@ -1,0 +1,151 @@
+--------------------------------------------------------
+REM INSERTING into ODELJENJE   
+SET DEFINE OFF;
+Insert into ODELJENJE (SIFRA,TIP,DATUM_IZGRADNJE, MAT_BR_LSPEC) values ('111','Ginekologija',to_date('01.01.2002','DD.MM.RRRR'),'011');
+Insert into ODELJENJE (SIFRA,TIP,DATUM_IZGRADNJE, MAT_BR_LSPEC) values ('444','Kardiologija',to_date('12.03.2000','DD.MM.RRRR'),'013');
+Insert into ODELJENJE (SIFRA,TIP,DATUM_IZGRADNJE, MAT_BR_LSPEC) values ('555','Nefrologija',to_date('24.04.2005','DD.MM.RRRR'),'012');
+Insert into ODELJENJE (SIFRA,TIP,DATUM_IZGRADNJE, MAT_BR_LSPEC) values ('666','Urologija',to_date('11.07.2010','DD.MM.RRRR'),'015');
+Insert into ODELJENJE (SIFRA,TIP,DATUM_IZGRADNJE, MAT_BR_LSPEC) values ('888','Onkologija',to_date('21.01.2003','DD.MM.RRRR'),'014');
+
+Insert into ODELJENJE (SIFRA,TIP,DATUM_IZGRADNJE, MAT_BR_LSPEC) values ('5','Neurologija',to_date('21.01.2000','DD.MM.RRRR'),'61');
+--------------------------------------------------------
+REM INSERTING into INTERVENCIJA
+SET DEFINE OFF;
+Insert into INTERVENCIJA (VRSTA,DATUM) values ('Plombiranje zuba', to_date('01.02.2023','DD.MM.RRRR'));
+Insert into INTERVENCIJA (VRSTA,DATUM) values ('Proteza', to_date('01.06.2022','DD.MM.RRRR'));
+Insert into INTERVENCIJA (VRSTA,DATUM) values ('Bezmetalne krunice', to_date('12.06.2022','DD.MM.RRRR'));
+Insert into INTERVENCIJA (VRSTA,DATUM) values ('Izbeljivanje zuba', to_date('20.08.2022','DD.MM.RRRR'));
+Insert into INTERVENCIJA (VRSTA,DATUM) values ('Hirusko vadjenje zuba', to_date('11.08.2022','DD.MM.RRRR'));
+
+------------------------------------------------------------
+REM INSERTING into SMENA
+SET DEFINE OFF;
+Insert into SMENA (ID,TIP_SMENE) values ('1', 'Prepodne');
+Insert into SMENA (ID,TIP_SMENE) values ('2', 'Popodne');
+
+------------------------------------------------------------
+REM INSERTING into OSOBLJE
+SET DEFINE OFF;
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('001','Petar','Petrovic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('002','Luka','Markovic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('003','Nikola','Lukic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('004','Anastasija','Mitrovic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('005','Jana','Jankovic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('006','Ksenija','Golubovic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('007','Stefan','Tadic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('008','Marko','Stojanovic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('009','Snezana','Nikolic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('010','Ilija','Ilic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('011','Vidoje','Stosic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('012','Veljko','Milenkovic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('013','Mateja','Ilic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('014','Minja','Perunovic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('015','Andjela','Kokovic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('016','Milos','Obilic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('017','Stefana','Tatic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('018','Dragana','Gavric');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('019','Vesna','Brzic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('020','Ivana','Pesic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('021','Milana','Karadzic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('022','Sava','Tosic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('023','Mitra','Gavrilovic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('024','Bojan','Smiljkovic');
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('025','Ivan','Pekic');
+
+Insert into OSOBLJE (MAT_BR, IME, PREZIME) values ('61','Ivana','Petrovic');
+
+------------------------------------------------------------
+REM INSERTING into MEDICINSKO
+SET DEFINE OFF;
+Insert into MEDICINSKO (MAT_BR, RADNI_STAZ, TIP_LEKARA, BROJ_ORDINACIJE, SPECIJALNOST) values ('001','13','STOMATOLOG', '0', '0');
+Insert into MEDICINSKO (MAT_BR, RADNI_STAZ, TIP_LEKARA, BROJ_ORDINACIJE, SPECIJALNOST) values ('002','23','STOMATOLOG', '0', '0');
+Insert into MEDICINSKO (MAT_BR, RADNI_STAZ, TIP_LEKARA, BROJ_ORDINACIJE, SPECIJALNOST) values ('003','10','STOMATOLOG', '0', '0');
+Insert into MEDICINSKO (MAT_BR, RADNI_STAZ, TIP_LEKARA, BROJ_ORDINACIJE, SPECIJALNOST) values ('004','5','STOMATOLOG', '0', '0');
+Insert into MEDICINSKO (MAT_BR, RADNI_STAZ, TIP_LEKARA, BROJ_ORDINACIJE, SPECIJALNOST) values ('005','8','STOMATOLOG', '0', '0');
+Insert into MEDICINSKO (MAT_BR, RADNI_STAZ, TIP_LEKARA, BROJ_ORDINACIJE, SPECIJALNOST) values ('006','10','LEKAR_OPSTE_PRAKSE', '21', '0');
+Insert into MEDICINSKO (MAT_BR, RADNI_STAZ, TIP_LEKARA, BROJ_ORDINACIJE, SPECIJALNOST) values ('007','5','LEKAR_OPSTE_PRAKSE', '22', '0');
+Insert into MEDICINSKO (MAT_BR, RADNI_STAZ, TIP_LEKARA, BROJ_ORDINACIJE, SPECIJALNOST) values ('008','20','LEKAR_OPSTE_PRAKSE', '23', '0');
+Insert into MEDICINSKO (MAT_BR, RADNI_STAZ, TIP_LEKARA, BROJ_ORDINACIJE, SPECIJALNOST) values ('009','35','LEKAR_OPSTE_PRAKSE', '24', '0');
+Insert into MEDICINSKO (MAT_BR, RADNI_STAZ, TIP_LEKARA, BROJ_ORDINACIJE, SPECIJALNOST) values ('010','40','LEKAR_OPSTE_PRAKSE', '25', '0');
+Insert into MEDICINSKO (MAT_BR, RADNI_STAZ, TIP_LEKARA, BROJ_ORDINACIJE, SPECIJALNOST) values ('011','28','LEKAR_SPECIJALISTA', '0', 'Ginekologija');
+Insert into MEDICINSKO (MAT_BR, RADNI_STAZ, TIP_LEKARA, BROJ_ORDINACIJE, SPECIJALNOST) values ('012','39','LEKAR_SPECIJALISTA', '0', 'Nefrologija');
+Insert into MEDICINSKO (MAT_BR, RADNI_STAZ, TIP_LEKARA, BROJ_ORDINACIJE, SPECIJALNOST) values ('013','26','LEKAR_SPECIJALISTA', '0', 'Kardiologija');
+Insert into MEDICINSKO (MAT_BR, RADNI_STAZ, TIP_LEKARA, BROJ_ORDINACIJE, SPECIJALNOST) values ('014','33','LEKAR_SPECIJALISTA', '0', 'Onkologija');
+Insert into MEDICINSKO (MAT_BR, RADNI_STAZ, TIP_LEKARA, BROJ_ORDINACIJE, SPECIJALNOST) values ('015','38','LEKAR_SPECIJALISTA', '0', 'Urologija');
+
+
+Insert into MEDICINSKO (MAT_BR, RADNI_STAZ, TIP_LEKARA, BROJ_ORDINACIJE, SPECIJALNOST) values ('61','38','LEKAR_SPECIJALISTA', '0', 'Neurologija');
+
+------------------------------------------------------------
+REM INSERTING into NEMEDICINSKO
+SET DEFINE OFF;
+Insert into NEMEDICINSKO (MAT_BR, TIP_ODRZAVANJA, STRUKA) values ('016','HIGIJENICAR','SREDNJA STRUCNA');
+Insert into NEMEDICINSKO (MAT_BR, TIP_ODRZAVANJA, STRUKA) values ('017','HIGIJENICAR','SREDNJA STRUCNA');
+Insert into NEMEDICINSKO (MAT_BR, TIP_ODRZAVANJA, STRUKA) values ('018','HIGIJENICAR','SREDNJA STRUCNA');
+Insert into NEMEDICINSKO (MAT_BR, TIP_ODRZAVANJA, STRUKA) values ('019','HIGIJENICAR','SREDNJA STRUCNA');
+Insert into NEMEDICINSKO (MAT_BR, TIP_ODRZAVANJA, STRUKA) values ('020','HIGIJENICAR','SREDNJA STRUCNA');
+Insert into NEMEDICINSKO (MAT_BR, TIP_ODRZAVANJA, STRUKA) values ('021','TEHNICKO_ODRZAVANJE','SREDNJA STRUCNA');
+Insert into NEMEDICINSKO (MAT_BR, TIP_ODRZAVANJA, STRUKA) values ('022','TEHNICKO_ODRZAVANJE','SREDNJA STRUCNA');
+Insert into NEMEDICINSKO (MAT_BR, TIP_ODRZAVANJA, STRUKA) values ('023','TEHNICKO_ODRZAVANJE','SREDNJA STRUCNA');
+Insert into NEMEDICINSKO (MAT_BR, TIP_ODRZAVANJA, STRUKA) values ('024','TEHNICKO_ODRZAVANJE','SREDNJA STRUCNA');
+Insert into NEMEDICINSKO (MAT_BR, TIP_ODRZAVANJA, STRUKA) values ('025','TEHNICKO_ODRZAVANJE','SREDNJA STRUCNA');
+
+------------------------------------------------------------
+REM INSERTING into STOMATOLOSKA_STOLICA   
+SET DEFINE OFF;
+Insert into STOMATOLOSKA_STOLICA (PROIZVODJAC, DATUM_PROIZVODNJE, MAT_BR_T) values ('Castellini puma', to_date('01.02.2015','DD.MM.RRRR'),'21');
+Insert into STOMATOLOSKA_STOLICA (PROIZVODJAC, DATUM_PROIZVODNJE, MAT_BR_T) values ('Castellini skema', to_date('01.02.2020','DD.MM.RRRR'),'22');
+Insert into STOMATOLOSKA_STOLICA (PROIZVODJAC, DATUM_PROIZVODNJE, MAT_BR_T) values ('Siger V100', to_date('01.02.2019','DD.MM.RRRR'),'23');
+Insert into STOMATOLOSKA_STOLICA (PROIZVODJAC, DATUM_PROIZVODNJE, MAT_BR_T) values ('Siger V100 - Premium', to_date('01.02.2023','DD.MM.RRRR'),'24');
+Insert into STOMATOLOSKA_STOLICA (PROIZVODJAC, DATUM_PROIZVODNJE, MAT_BR_T) values ('Siger U200', to_date('01.02.2018','DD.MM.RRRR'),'25');
+
+------------------------------------------------------------
+
+REM INSERTING into PACIJENT 
+SET DEFINE OFF;
+Insert into PACIJENT (MAT_BR, IME, PREZIME, TIP_PACIJENTA, ULICA, BROJ, DATUM_PRIJEMA, DATUM_OTPUSTA, MAT_BR_LOP, MAT_BR_LSPEC) values ('11','Marko', 'Markovic', 'AMBULANTNI', 'Hilandarska', '6', NULL, NULL, '006', NULL);
+Insert into PACIJENT (MAT_BR, IME, PREZIME, TIP_PACIJENTA, ULICA, BROJ, DATUM_PRIJEMA, DATUM_OTPUSTA, MAT_BR_LOP, MAT_BR_LSPEC) values ('12','Jovana', 'Jovic', 'AMBULANTNI', 'Bulevar Nemanjica', '20', NULL, NULL, '007', NULL);
+Insert into PACIJENT (MAT_BR, IME, PREZIME, TIP_PACIJENTA, ULICA, BROJ, DATUM_PRIJEMA, DATUM_OTPUSTA, MAT_BR_LOP, MAT_BR_LSPEC) values ('13','Nikola', 'Ilic', 'AMBULANTNI', 'Episkopska', '11', NULL, NULL, '008', NULL);
+Insert into PACIJENT (MAT_BR, IME, PREZIME, TIP_PACIJENTA, ULICA, BROJ, DATUM_PRIJEMA, DATUM_OTPUSTA, MAT_BR_LOP, MAT_BR_LSPEC) values ('14','Marija', 'Veljic', 'AMBULANTNI', 'Dusana Popovica', '52', NULL, NULL, '009', NULL);
+Insert into PACIJENT (MAT_BR, IME, PREZIME, TIP_PACIJENTA, ULICA, BROJ, DATUM_PRIJEMA, DATUM_OTPUSTA, MAT_BR_LOP, MAT_BR_LSPEC) values ('15','Dusan', 'Simic', 'AMBULANTNI', 'Ive Andrica', '27', NULL, NULL, '010', NULL);
+Insert into PACIJENT (MAT_BR, IME, PREZIME, TIP_PACIJENTA, ULICA, BROJ, DATUM_PRIJEMA, DATUM_OTPUSTA, MAT_BR_LOP, MAT_BR_LSPEC) values ('16','Anja', 'Milovanovic', 'STACIONARNI', '0', '0', to_date('01.02.2020','DD.MM.RRRR'), to_date('07.02.2020','DD.MM.RRRR'), '006', '011');
+Insert into PACIJENT (MAT_BR, IME, PREZIME, TIP_PACIJENTA, ULICA, BROJ, DATUM_PRIJEMA, DATUM_OTPUSTA, MAT_BR_LOP, MAT_BR_LSPEC) values ('17','Andrija', 'Krstic', 'STACIONARNI', '0', '0', to_date('02.02.2020','DD.MM.RRRR'), to_date('10.02.2020','DD.MM.RRRR'), '007', '012');
+Insert into PACIJENT (MAT_BR, IME, PREZIME, TIP_PACIJENTA, ULICA, BROJ, DATUM_PRIJEMA, DATUM_OTPUSTA, MAT_BR_LOP, MAT_BR_LSPEC) values ('18','Miloje', 'Korsumlic', 'STACIONARNI', '0', '0', to_date('01.03.2021','DD.MM.RRRR'), to_date('07.03.2021','DD.MM.RRRR'), '008', '013');
+Insert into PACIJENT (MAT_BR, IME, PREZIME, TIP_PACIJENTA, ULICA, BROJ, DATUM_PRIJEMA, DATUM_OTPUSTA, MAT_BR_LOP, MAT_BR_LSPEC) values ('19','Dragomir', 'Kostic', 'STACIONARNI', '0', '0', to_date('01.07.2020','DD.MM.RRRR'), to_date('01.08.2020','DD.MM.RRRR'), '009', '014');
+Insert into PACIJENT (MAT_BR, IME, PREZIME, TIP_PACIJENTA, ULICA, BROJ, DATUM_PRIJEMA, DATUM_OTPUSTA, MAT_BR_LOP, MAT_BR_LSPEC) values ('20','Radojka', 'Rakovic', 'STACIONARNI', '0', '0', to_date('10.10.2022','DD.MM.RRRR'), to_date('20.10.2022','DD.MM.RRRR'), '010', '015');
+
+------------------------------------------------------------
+REM INSERTING into ODRZAVA_HIGIJENU_NA    
+SET DEFINE OFF;
+Insert into ODRZAVA_HIGIJENU_NA (MAT_BR, MAT_BR_H, SIFRA, VREME_ODRZAVANJA) values ('103','019', '444', to_date('05.02.2022','DD.MM.RRRR'));
+Insert into ODRZAVA_HIGIJENU_NA (MAT_BR, MAT_BR_H, SIFRA, VREME_ODRZAVANJA) values ('104','020', '555', to_date('06.02.2022','DD.MM.RRRR'));
+Insert into ODRZAVA_HIGIJENU_NA (MAT_BR, MAT_BR_H, SIFRA, VREME_ODRZAVANJA) values ('105','016', '666', to_date('07.02.2022','DD.MM.RRRR'));
+Insert into ODRZAVA_HIGIJENU_NA (MAT_BR, MAT_BR_H, SIFRA, VREME_ODRZAVANJA) values ('107','018', '888', to_date('09.02.2022','DD.MM.RRRR'));
+
+------------------------------------------------------------
+REM INSERTING into LEZI_NA   
+SET DEFINE OFF;
+Insert into LEZI_NA (MAT_BR, MAT_BR_P, SIFRA, VREME_POCETKA) values ('1', '26', '111', to_date('01.02.2020','DD.MM.RRRR'));
+Insert into LEZI_NA (MAT_BR, MAT_BR_P, SIFRA, VREME_POCETKA) values ('2', '27', '666', to_date('02.02.2020','DD.MM.RRRR'));
+Insert into LEZI_NA (MAT_BR, MAT_BR_P, SIFRA, VREME_POCETKA) values ('3', '28', '888', to_date('01.03.2021','DD.MM.RRRR'));
+Insert into LEZI_NA (MAT_BR, MAT_BR_P, SIFRA, VREME_POCETKA) values ('5', '30', '555', to_date('10.10.2022','DD.MM.RRRR'));
+
+------------------------------------------------------------
+REM INSERTING into RADI_NA   
+SET DEFINE OFF;
+Insert into RADI_NA (MAT_BR, MAT_BR_S, PROIZVODJAC, ID) values ('10', '001', 'Castellini puma', '1'));
+Insert into RADI_NA (MAT_BR, MAT_BR_S, PROIZVODJAC, ID) values ('11', '002', 'Castellini skema', '1'));
+Insert into RADI_NA (MAT_BR, MAT_BR_S, PROIZVODJAC, ID) values ('12', '003', 'Siger V100', '2'));
+Insert into RADI_NA (MAT_BR, MAT_BR_S, PROIZVODJAC, ID) values ('13', '004', 'Siger U200', '2'));
+Insert into RADI_NA (MAT_BR, MAT_BR_S, PROIZVODJAC, ID) values ('14', '005', 'Siger V100 - Premium', '1'));
+
+------------------------------------------------------------
+REM INSERTING into OBAVLJA 
+SET DEFINE OFF;
+Insert into OBAVLJA (MAT_BR, MAT_BR_S, MAT_BR_P, VRSTA, VREME_INTERVENCIJE) values ('1', '001', '1', 'Plombiranje zuba', to_date('01.02.2023','DD.MM.RRRR'));
+Insert into OBAVLJA (MAT_BR, MAT_BR_S, MAT_BR_P, VRSTA, VREME_INTERVENCIJE) values ('2', '002', '2', 'Proteza', to_date('01.06.2022','DD.MM.RRRR'));
+Insert into OBAVLJA (MAT_BR, MAT_BR_S, MAT_BR_P, VRSTA, VREME_INTERVENCIJE) values ('3', '003', '3', 'Bezmetalne krunice', to_date('12.06.2022','DD.MM.RRRR'));
+Insert into OBAVLJA (MAT_BR, MAT_BR_S, MAT_BR_P, VRSTA, VREME_INTERVENCIJE) values ('4', '004', '4', 'Izbeljivanje zuba', to_date('20.08.2022','DD.MM.RRRR'));
+Insert into OBAVLJA (MAT_BR, MAT_BR_S, MAT_BR_P, VRSTA, VREME_INTERVENCIJE) values ('5', '005', '5', 'Hirusko vadjenje zuba', to_date('11.08.2022','DD.MM.RRRR'));
+
+--------------------------------------------------------
